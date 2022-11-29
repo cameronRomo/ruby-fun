@@ -13,8 +13,26 @@
 
 # greet "Cameron"
 
-def sum x, y
-  x + y
-end
+# def sum x, y
+#   x + y
+# end
 
-puts sum 12, 12
+# puts sum 12, 12
+
+# def print_trio first="first", second="second", third="third"
+#   puts first
+#   puts second
+#   puts third
+# end
+
+# print_trio "What", "Up"
+
+# def greet greeting="Hi", name=nil
+#   if name.nil?
+#     puts "#{greeting}! What's your name?"
+#     name = gets.chomp!
+#   end
+#   puts "#{greeting} #{name}"
+# end
+
+# greet "Sup", "Cameron"
