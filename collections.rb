@@ -87,9 +87,13 @@ fusball_scores = Hash.new(0)
 # Raffle style
 players = ["Duncan", "Kevin", "Tara", "Bobby", "Jane"]
 
+def shuffle_and_pop array
+  array.shuffle!.pop
+end
+
 # winner = players[rand players.length] 
 #OR...
-winner = players.sample
+# winner = players.sample
 # puts "And the winner is... #{winner}!"
 
 # players = {
@@ -106,10 +110,10 @@ winner = players.sample
 
 # puts "And the winner is... #{players[winning_number]}!!"
 
-winner = players.shuffle!.pop
+winner = shuffle_and_pop players
 # p players.include? winner
 
 puts "And the winner is... #{winner}!!"
 
-runner_up = players.shuffle!.pop
+runner_up = shuffle_and_pop players
 puts "And the runner up prize goes to... #{runner_up}!"
