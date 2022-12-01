@@ -49,29 +49,18 @@ puts "You played #{p_move}"
 # get computer move
 c_move = moves.sample
 puts "Computer played #{c_move}"
-# see who won
-# possibilites: 
-# user wins, 
-if p_move == 'rock' && c_move == 'scissors'
-  puts "you win!"
-elsif p_move == 'paper' && c_move == 'rock'
-  puts "you win!"
-elsif p_move == 'scissors' && c_move == 'paper'  
-  puts "you win!"
-  # computer wins, 
-elsif p_move == 'rock' && c_move == 'paper'  
-  puts "computer wins!"
-elsif p_move == 'paper' && c_move == 'scissors'  
-  puts "computer wins!"
-elsif p_move == 'scissors' && c_move == 'rock'  
-  puts "computer wins!"
-  # tie
-elsif p_move == 'rock' && c_move == 'rock'  
-  puts "it's a tie"
-elsif p_move == 'paper' && c_move == 'paper'
-  puts "it's a tie"
-elsif p_move == 'scissors' && c_move == 'scissors'
-  puts "it's a tie"
+
+if p_move == c_move
+  puts "it's a tie" 
+elsif p_move == 'rock'
+  puts "you win!" if c_move == 'scissors'
+  puts "computer wins!" if c_move == 'paper'
+elsif p_move == 'paper'
+  puts "you win!" if c_move == 'rock'
+  puts "computer wins!" if c_move == 'scissors'
+elsif p_move == 'scissors'
+  puts "you win!" if c_move == 'paper'
+  puts "computer wins!" if c_move == 'rock'
 else
   puts "Unexpected output"
 end
