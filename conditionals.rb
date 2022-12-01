@@ -50,13 +50,32 @@ puts "You played #{p_move}"
 c_move = moves.sample
 puts "Computer played #{c_move}"
 
-case [p_move, c_move] 
-when ['rock', 'scissors'], ['paper', 'rock'], ['scissors', 'paper']
-  puts "You win!!" 
-when ['scissors', 'rock'], ['rock', 'paper'], ['paper', 'scissors']
-  puts "computer wins!"
-when ['scissors', 'scissors'], ['rock', 'rock'], ['paper', 'paper']
+win_scenerios = [
+  ['rock', 'scissors'], 
+  ['paper', 'rock'], 
+  ['scissors', 'paper']
+]
+
+loose_scenerios = [
+  ['scissors', 'rock'], 
+  ['rock', 'paper'], 
+  ['paper', 'scissors']
+]
+
+tie_scenerios = [
+  ['scissors', 'scissors'], 
+  ['rock', 'rock'], 
+  ['paper', 'paper']
+]
+
+this_game = [p_move, c_move]
+
+if p_move == c_move
   puts "It's a tie!"
+elsif win_scenerios.include? this_game
+  puts "You win!!" 
+elsif loose_scenerios.include? this_game
+  puts "computer wins!"
 else
   puts "Unexpected output"
 end
