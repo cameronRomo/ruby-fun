@@ -50,17 +50,13 @@ puts "You played #{p_move}"
 c_move = moves.sample
 puts "Computer played #{c_move}"
 
-if p_move == c_move
-  puts "it's a tie" 
-elsif p_move == 'rock'
-  puts "you win!" if c_move == 'scissors'
-  puts "computer wins!" if c_move == 'paper'
-elsif p_move == 'paper'
-  puts "you win!" if c_move == 'rock'
-  puts "computer wins!" if c_move == 'scissors'
-elsif p_move == 'scissors'
-  puts "you win!" if c_move == 'paper'
-  puts "computer wins!" if c_move == 'rock'
+case [p_move, c_move] 
+when ['rock', 'scissors'], ['paper', 'rock'], ['scissors', 'paper']
+  puts "You win!!" 
+when ['scissors', 'rock'], ['rock', 'paper'], ['paper', 'scissors']
+  puts "computer wins!"
+when ['scissors', 'scissors'], ['rock', 'rock'], ['paper', 'paper']
+  puts "It's a tie!"
 else
   puts "Unexpected output"
 end
