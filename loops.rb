@@ -175,3 +175,7 @@ end
 
 p book_names
 
+# Ranges
+(3..7).each {|n| puts n}
+# .upto allows you to skip making a range object
+12.upto(24) { |x| puts x if x.even? }
