@@ -33,7 +33,7 @@ index = 0
 array = ['random', 'stuff', 'for', 3432, "printing"]
 
 for item in array do
-  puts item
+  # puts item
 end
 
 for item in array do 
@@ -41,5 +41,38 @@ for item in array do
 end
 
 for i in 0...array.length do
-  p array[i] * 2
+  # p array[i] * 2
+end
+
+object = ['stuff', 'that', 'lives', 'in', 'array']
+
+# Less good:
+for item in object do 
+  puts item.upcase
+end
+
+# puts item
+
+# Better
+object.each do |thing| 
+  puts thing.reverse
+end
+ 
+# puts thing 
+
+(0...object.length).each do | i |
+  object[i] = 'evil ' + object[i]
+end
+
+# p object
+
+dinosaurs = [
+  'brachiosaur',
+  'brontosaurus', 
+  't-rex',
+  'raptor'
+]
+
+dinosaurs.each_with_index do |dinosaur, index|
+  p dinosaurs[index] = 'Awesome ' + dinosaur
 end
