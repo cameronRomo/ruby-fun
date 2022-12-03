@@ -139,3 +139,39 @@ profits = 20_000
 expensses = [100, 3400, 213, 50, 21] 
 
 expensses.reduce profits, :-
+
+# Hashes
+
+sidekicks = {
+  "batman" => "robin",
+  "superman" => "jimmy olsen",
+  "captain america" => "bucky",
+  "conan" => "andy richter"
+}
+
+sidekicks.each do |hero, sidekick|
+  puts "#{sidekick} is the sidekick of #{hero}"
+end
+
+sidekicks.each do |pair|
+  p pair
+end
+
+sidekicks.each_key do |hero|
+  puts "#{hero} works alone"
+end
+
+sidekicks.each_with_index do |(hero, sidekick), index|
+  puts "#{index}. #{hero} and #{sidekick} to the rescue!"
+end
+
+sidekicks.select do |hero, sidekick|
+  hero.length > sidekick.length
+end
+
+book_names = sidekicks.map do |hero, sidekick|
+  "#{hero} & #{sidekick} Monthly"
+end
+
+p book_names
+
