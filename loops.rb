@@ -109,4 +109,33 @@ doubles = (1..10).map { |n| n*2 }
 
 # p doubles.all? { |n| n.odd? }
 
-puts (1..10).find { |n| n % 7 == 0 } # shortcut for .detect
+# puts (1..10).find { |n| n % 7 == 0 } # shortcut for .detect
+
+# reduce/inject
+
+costs = [34.21, 45, 23.21, 65.34, 0.20]
+
+total_costs = 0
+
+# costs.each do |receipt|
+#   total_costs += receipt
+# end
+
+# p total_costs
+
+sum = costs.reduce 0 do |total, receipt|
+  total + receipt
+end
+
+# p sum
+
+strings = ["There", "can", "only", "be", "one"].reduce "" do |string, word|
+  # p string << word # same as concat
+end
+
+p [3, 4, 12, 53, 21].reduce :*
+
+profits = 20_000
+expensses = [100, 3400, 213, 50, 21] 
+
+expensses.reduce profits, :-
