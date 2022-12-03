@@ -74,5 +74,39 @@ dinosaurs = [
 ]
 
 dinosaurs.each_with_index do |dinosaur, index|
-  p dinosaurs[index] = 'Awesome ' + dinosaur
+  # p dinosaurs[index] = 'Awesome ' + dinosaur
 end
+
+bad_guys = [
+  'Darth Vader',
+  'Biff Tannen', 
+  'Maleficent',
+  'Regina George'
+]
+
+opinions_about_bad_guys = []
+
+bad_guys.each do |villain|
+  opinion = "#{villain} is real bad news"
+  # puts opinion
+  opinions_about_bad_guys << opinion
+end
+
+# p opinions_about_bad_guys
+
+# Filters
+
+numbers = [1220, 320, 424, 150, 283, 231, 48349]
+
+odds = numbers.select { |n| n.odd? }
+evens = numbers.reject { |n| n.odd? }
+# p odds
+# p evens
+
+(1..10).any? { |n| n.odd? }
+
+doubles = (1..10).map { |n| n*2 }
+
+# p doubles.all? { |n| n.odd? }
+
+puts (1..10).find { |n| n % 7 == 0 } # shortcut for .detect
