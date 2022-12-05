@@ -147,33 +147,67 @@ test_string = "cowboy"
 # p Person.default_man
 # p Lawyer.default_woman
 
-class Teacher
-  attr_accessor :students
+# class Teacher
+#   attr_accessor :students
 
-  def initialize
-    @students = ['timmy', 'tammy']
-    puts self    
+#   def initialize
+#     @students = ['timmy', 'tammy']
+#     puts self    
+#   end
+# end
+
+# ms_jones = Teacher.new
+# p ms_jones.students
+
+# class Customer
+#   @@total_customers = 0
+
+#   def initialize
+#     @@total_customers += 1
+#     puts "#{@@total_customers} customers served."
+#   end
+# end
+
+# Customer.new
+# Customer.new
+# Customer.new
+
+# class VIPCustomer < Customer
+
+# end
+
+# VIPCustomer.new
+
+class Engineer
+  def do_math
+    puts "numbers!"
   end
 end
 
-ms_jones = Teacher.new
-p ms_jones.students
-
-class Customer
-  @@total_customers = 0
-
-  def initialize
-    @@total_customers += 1
-    puts "#{@@total_customers} customers served."
+class Designer
+  def make_pretty
+    puts "Look how it all works together."
   end
 end
 
-Customer.new
-Customer.new
-Customer.new
-
-class VIPCustomer < Customer
-
+module ManagementTraining
+  def yelling
+    puts "GET BACK TO WORK!"
+  end
 end
 
-VIPCustomer.new
+class LeadEngineer < Engineer
+  include ManagementTraining
+end
+
+class LeadDesigner < Designer
+  include ManagementTraining
+end
+
+lead_eng = LeadEngineer.new
+lead_des = LeadDesigner.new
+
+lead_eng.do_math
+lead_eng.yelling
+lead_des.make_pretty
+lead_des.yelling
