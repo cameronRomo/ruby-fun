@@ -92,57 +92,57 @@ test_string = "cowboy"
 # p socrates.die
 # p socrates
 
-class Person
-  def initialize name
-    @name = name
-  end
+# class Person
+#   def initialize name
+#     @name = name
+#   end
 
-  def name
-    @name
-  end
+#   def name
+#     @name
+#   end
 
-  def introduce 
-    puts "Hi, I'm #{@name}."
-  end
-end
+#   def introduce 
+#     puts "Hi, I'm #{@name}."
+#   end
+# end
 
-dave = Person.new "Dave"
+# dave = Person.new "Dave"
 
-tom = Person.new "Tom"
-p dave
-p dave.name
+# tom = Person.new "Tom"
+# p dave
+# p dave.name
 
-dave.introduce
-tom.introduce
+# dave.introduce
+# tom.introduce
 
-p Person.class
+# p Person.class
 
-class Person
-  def self.introduce
-    puts "I'm the abstract concept of a person"
-  end
+# class Person
+#   def self.introduce
+#     puts "I'm the abstract concept of a person"
+#   end
 
-  class << self
-    def default_man
-      self.new "John Doe"
-    end
+#   class << self
+#     def default_man
+#       self.new "John Doe"
+#     end
 
-    def default_woman
-      self.new "Jane Doe"
-    end
-  end
-end
+#     def default_woman
+#       self.new "Jane Doe"
+#     end
+#   end
+# end
 
-person = Person.new "Anonymous"
-person.introduce # calls instance method
-Person.introduce # Calls class method
+# person = Person.new "Anonymous"
+# person.introduce # calls instance method
+# Person.introduce # Calls class method
 
-class Lawyer < Person
-end
+# class Lawyer < Person
+# end
 
-val = Lawyer.new "Val"
-p val.introduce
-Lawyer.introduce
+# val = Lawyer.new "Val"
+# p val.introduce
+# Lawyer.introduce
 
-p Person.default_man
-p Lawyer.default_woman
+# p Person.default_man
+# p Lawyer.default_woman
