@@ -146,3 +146,34 @@ test_string = "cowboy"
 
 # p Person.default_man
 # p Lawyer.default_woman
+
+class Teacher
+  attr_accessor :students
+
+  def initialize
+    @students = ['timmy', 'tammy']
+    puts self    
+  end
+end
+
+ms_jones = Teacher.new
+p ms_jones.students
+
+class Customer
+  @@total_customers = 0
+
+  def initialize
+    @@total_customers += 1
+    puts "#{@@total_customers} customers served."
+  end
+end
+
+Customer.new
+Customer.new
+Customer.new
+
+class VIPCustomer < Customer
+
+end
+
+VIPCustomer.new
