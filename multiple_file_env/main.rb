@@ -1,3 +1,5 @@
-require_relative 'other'
-puts @test_var
-greeting
+require_relative 'player'
+require_relative 'computer_player'
+require_relative 'game'
+
+Game.new
